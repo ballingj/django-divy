@@ -24,8 +24,6 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
-
-
 """
 Migrations are very powerful and let you change your models over time, as you develop your project, 
 without the need to delete your database or tables and make new ones - it specializes in upgrading your database live, 
