@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.contrib import admin
 
 # Question Model - has a question and a publication date.
 class Question(models.Model):
@@ -11,11 +12,18 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    @admin.display(
+        boolean=True,
+        ordering='pub_date',
+        description='Published recently?',
+    )
+
     def was_published_recently(self):
         now = timezone.now()
         # return self.pub_date >= timezone.now() - datetime.timedelta(days=1)   # this causes future date to show as "recent" which is wrong
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
+    
 
 # Choice Model - has two fields: the text of the choice and a vote tally. Each Choice is associated with a Question
 class Choice(models.Model):
