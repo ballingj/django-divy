@@ -69,7 +69,12 @@ admin.site.register(Project)
 ### Verify App is registered in settings.py
 ```
 INSTALLED_APPS = [
-    ...
-    'projects.apps.ProjectsConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'projects',     # add the new app
 ]
 ```
