@@ -78,3 +78,7 @@ INSTALLED_APPS = [
     'projects',     # add the new app
 ]
 ```
+
+### Model relationship for this project - drawsql.app
+> go to https://drawsql.app/dennis-ivy/diagrams/dev-search#
+
